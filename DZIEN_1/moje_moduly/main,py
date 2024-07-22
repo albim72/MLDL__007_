@@ -3,7 +3,11 @@
 from dane import nrfilii as nf
 from dane import book as bk
 
+from moje_funkcje.collectionsfunc import czytaj_liste, czytaj_slownik
+
 # CTRL+D -> powielenie linii/bloku kodu
 # CTRL+/ -> komentowanie/odkomentowanie kodu
 print(nf)
 print(bk)
+czytaj_liste(nf)
+czytaj_slownik(bk)
