@@ -68,3 +68,21 @@ plt.xlabel('Data')
 plt.ylabel('Sprzedaż')
 plt.legend()
 plt.show()
+
+_____________________________________________________________
+
+import pandas as pd
+import numpy as np
+
+def create_sales_time_series(n_products, n_years):
+    months = pd.date_range('1/1/2000', periods=12*n_years, freq='M')
+    data = []
+    
+    for i in range(1, n_products + 1):
+        for month in months:
+            sales_value = np.random.randint(50, 1000)
+            data.append([f'Product_{i}', month.year, month.month, sales_value])
+    
+    df = pd.DataFrame(data, columns=['Product_ID', 'Year', 'Month', 'Sales_Value'])
+    return df
+
